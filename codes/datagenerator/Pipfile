@@ -1,0 +1,26 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+jupyter = "*"
+flake8 = "*"
+
+[packages]
+networkx = "*"
+pandas = "==0.22.0"
+numpy = "*"
+scipy = "*"
+pytest = "*"
+pytest-metadata = "*"
+faker = "*"
+pymongo = "*"
+"path.py" = "*"
+bson = "*"
+tabulate = "*"
+"e1839a8" = {path = ".", editable = true}
+datagenerator = {editable = true, path = "."}
+
+[requires]
+python_version = "3.6.7"
