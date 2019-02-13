@@ -30,10 +30,10 @@ class Container(object):
         self.name = name
 
         self.master_seed = master_seed
-        self.clock_params = clock_params
+       # self.clock_params = clock_params
 
         self.seeder = seed_provider(master_seed=master_seed)
-        self.clock = Clock(seed=next(self.seeder), **clock_params)
+       #self.clock = Clock(seed=next(self.seeder), **clock_params)
         self.stories = []
         self.populations = {}
         self.generators = {}
@@ -47,7 +47,8 @@ class Container(object):
             raise ValueError("refusing to overwrite existing population: {} "
                              "".format(name))
 
-        self.populations[name] = population.Population(container=self, **population_params)
+        self.populations[name] = population.Population(
+            container=self, **population_params)
         return self.populations[name]
 
     def load_population(self, population_id, namespace=None):
@@ -87,7 +88,8 @@ class Container(object):
         Looks up and story by name in this container and returns it. Returns none
         if not found.
         """
-        remaining_stories = filter(lambda a: a.name == story_name, self.stories)
+        remaining_stories = filter(
+            lambda a: a.name == story_name, self.stories)
         try:
             return next(remaining_stories)
         except StopIteration:
@@ -134,7 +136,8 @@ class Container(object):
             os.makedirs(log_output_folder)
 
         if logs.shape[0] > 0:
-            logging.info("appending {} rows to {}".format(logs.shape[0], output_file))
+            logging.info("appending {} rows to {}".format(
+                logs.shape[0], output_file))
 
             if not os.path.exists(output_file):
                 # If these are this first persisted logs, we create the file
@@ -164,7 +167,7 @@ class Container(object):
         n_iterations = self.clock.n_iterations(duration)
         logging.info("Starting container for {} iterations of {} for a "
                      "total duration of {}".format(
-                        n_iterations, self.clock.step_duration, duration
+                         n_iterations, self.clock.step_duration, duration
                      ))
 
         if os.path.exists(log_output_folder):
@@ -202,7 +205,7 @@ class Container(object):
             }
 
             container = Container(name=container_name, master_seed=config["master_seed"],
-                            **clock_config)
+                                  **clock_config)
 
             for population_id in db.list_populations(namespace=container_name):
                 container.load_population(population_id)

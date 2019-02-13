@@ -2,14 +2,14 @@ from __future__ import division
 import logging
 import networkx as nx
 import core.random_generators as rg
-from core.circus import Circus
+from core.container import Container
 
 import pandas as pd
 
 
-class WithErdosRenyi(Circus):
+class WithErdosRenyi(Container):
     """
-        Circus mix-in that provides method to build ER random graph
+        Container mix-in that provides method to build ER random graph
     """
 
     def add_er_social_network_relationship(self, population, relationship_name, average_degree):

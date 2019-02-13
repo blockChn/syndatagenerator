@@ -46,6 +46,27 @@ class Generator(object):
         """
         pass
 
+    @abstractmethod
+    def lookup(self,condition, **kwargs):
+        pass    
+
+    @abstractmethod
+    def transform(self,init_values, **kwargs):
+        pass        
+
+    @abstractmethod
+    def validate(self,init_values, **kwargs):
+        pass        
+
+    @abstractmethod
+    def improve(self,init_values, **kwargs):
+        pass        
+
+    @abstractmethod
+    def build(self,init_values, **kwargs):
+        pass        
+
+
     def map(self, f=None, f_vect=None):
         """
         Creates a new generator that transforms the generated values with the
