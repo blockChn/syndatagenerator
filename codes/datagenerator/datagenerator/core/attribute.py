@@ -43,13 +43,13 @@ class Attribute(object):
                              "but indices will be lost.")
                 init_values = init_values.tolist()
 
-            init_values = init_gen.transform(init_values)
+            # init_values = init_gen.transform(init_values)
 
-            init_values = init_gen.validate(init_values)
+            # init_values = init_gen.validate(init_values)
 
-            init_values = init_gen.improve(init_values)
+            # init_values = init_gen.improve(init_values)
 
-            init_values = init_gen.build(init_values)
+            # init_values = init_gen.build(init_values)
 
             self._table = pd.DataFrame({"value": init_values}, index=population.ids)
 
