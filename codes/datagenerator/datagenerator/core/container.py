@@ -30,10 +30,10 @@ class Container(object):
         self.name = name
 
         self.master_seed = master_seed
-       # self.clock_params = clock_params
+        self.clock_params = clock_params
 
         self.seeder = seed_provider(master_seed=master_seed)
-       #self.clock = Clock(seed=next(self.seeder), **clock_params)
+        self.clock = Clock(seed=next(self.seeder), **clock_params)
         self.stories = []
         self.populations = {}
         self.generators = {}

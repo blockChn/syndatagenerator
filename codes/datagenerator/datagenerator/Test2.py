@@ -31,8 +31,9 @@ hello_world = example_circus.create_story(
 )
 
 hello_world.set_operations(
-    example_circus.clock.ops.timestamp(named_as="TIME"),
+    #example_circus.clock.ops.timestamp(named_as="TIME"),
     ConstantGenerator(value="hello world").ops.generate(named_as="MESSAGE"),
+    example_circus.populations["person"].ops.lookup(id_field="PERSON_ID", select={"NAME": "EMITTER_NAME"}),
     operations.FieldLogger(log_id="hello")
 )
 
