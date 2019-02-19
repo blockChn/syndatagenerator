@@ -7,3 +7,6 @@ codes/datagenerator/datagenerator/core/__pycache__/random_generators.cpython-36.
 codes/datagenerator/datagenerator/core/__pycache__/relationship.cpython-36.pyc
 codes/datagenerator/datagenerator/core/__pycache__/story.cpython-36.pyc
 codes/datagenerator/datagenerator/core/__pycache__/util_functions.cpython-36.pyc
+codes/datagenerator/datagenerator/core/__pycache__/container.cpython-36.pyc
+codes/datagenerator/datagenerator/Data.xlsx
+output/example_scenario/hello.csv
