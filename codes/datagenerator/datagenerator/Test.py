@@ -23,6 +23,7 @@ person = example_circus.create_population(name="person", size=1000, ids_gen=id_g
 person.create_attribute("NAME", init_gen=name_gen)
 person.create_attribute("AGE", init_gen=age_gen)
 
+print ("sample")
 
 logging.info("\n" + 
   tabulate(person.to_dataframe().head(10), headers='keys', tablefmt='psql')
